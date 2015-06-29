@@ -63,7 +63,7 @@ namespace WebApplication2.Controllers
                 commentModel.CommentDateTime = DateTime.Now;
                 db.Comments.Add(commentModel);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details","Article",commentModel.Article_ArticleID);
             }
 
             //ViewBag.Article_ArticleID = new SelectList(db.Articles, "ArticleID", "ArticleTitle", commentModel.Article_ArticleID);

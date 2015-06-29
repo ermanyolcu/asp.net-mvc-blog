@@ -168,18 +168,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506260818026_Init.cs" />
-    <Compile Include="Migrations\201506260818026_Init.Designer.cs">
-      <DependentUpon>201506260818026_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506260903440_Init2.cs" />
-    <Compile Include="Migrations\201506260903440_Init2.Designer.cs">
-      <DependentUpon>201506260903440_Init2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506261243339_Init3.cs" />
-    <Compile Include="Migrations\201506261243339_Init3.Designer.cs">
-      <DependentUpon>201506261243339_Init3.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\ArticleModels.cs" />
@@ -259,6 +247,7 @@
     <Content Include="Views\Comment\Edit.cshtml" />
     <Content Include="Views\Comment\Index.cshtml" />
     <Content Include="Views\Comment\Create.cshtml" />
+    <Content Include="Views\Shared\CommentCreate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -270,17 +259,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201506260818026_Init.resx">
-      <DependentUpon>201506260818026_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506260903440_Init2.resx">
-      <DependentUpon>201506260903440_Init2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506261243339_Init3.resx">
-      <DependentUpon>201506261243339_Init3.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

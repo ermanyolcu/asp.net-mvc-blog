@@ -44,6 +44,23 @@ namespace WebApplication2.Controllers
             return View(articlePage);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Details(AddCommentVievModel addCommentVM)
+        {
+            if (ModelState.IsValid)
+            {
+                // addCommentVM. articleID???
+                addCommentVM.Comment.User_Id = User.Identity.GetUserId();
+                addCommentVM.Comment.CommentDateTime = DateTime.Now;
+                db.Comments.Add(addCommentVM.Comment);
+                db.SaveChanges();
+                return RedirectToAction("Details", "Article", articlePage.Comment.Article_ArticleID);
+            }
+
+            return View(articlePage);
+        }
+
         // GET: Article/Create
         public ActionResult Create()
         {

@@ -32,7 +32,7 @@ namespace WebApplication2.Models
     {
         public ArticleModel Article { get; set; }
 
-        public CommentModel Comment { get; set; }
+        //  public CommentModel Comment { get; set; }
 
         public List<CommentModel> CommentsOfArticle { get; set; }
     }

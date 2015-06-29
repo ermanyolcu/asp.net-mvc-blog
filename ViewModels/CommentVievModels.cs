@@ -14,4 +14,11 @@ namespace WebApplication2.Models
         
         public string CommentText { get; set; }
     }
+
+    public class AddCommentVievModel
+    {
+        public int ArticleID { get; set; }
+
+        public CommentModel Comment { get; set; }
+    }
 }
