@@ -1,0 +1,55 @@
+﻿@model IEnumerable<WebApplication2.Models.ArticleModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ArticleTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArticleText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ArticleDateTime)
+        </th>
+        <th>
+            Time    @*@Html.DisplayNameFor(model => model.ArticleTime)*@
+        </th>
+        <th></th>
+    </tr>
+
+@if (Model != null) {
+    foreach (var item in Model) {
+        string articleDate = item.ArticleDateTime.ToLongDateString();
+        string articleTime = item.ArticleDateTime.ToShortTimeString();
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArticleTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArticleText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => articleDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => articleTime)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ArticleID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ArticleID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ArticleID })
+            </td>
+        </tr>
+    }
+}
+
+</table>

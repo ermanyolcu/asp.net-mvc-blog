@@ -1,0 +1,22 @@
+﻿@model IEnumerable<WebApplication2.Models.ArticleModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+
+@foreach (var item in Model)
+{
+    <div>
+        <h3>@Html.ActionLink(item.ArticleTitle, "Details", "Article", new { id = item.ArticleID }, null)</h3>
+
+        <p>@Html.DisplayFor(modelItem => item.ArticleText)</p>
+        @{
+            string date = item.ArticleDateTime.ToLongDateString();
+            string time = item.ArticleDateTime.ToShortTimeString();
+        }
+        Posted at @Html.DisplayFor(modelItem => date) , @Html.DisplayFor(modelItem => time) by @Html.DisplayFor(modelItem => item.User.UserName)
+    </div>
+}
